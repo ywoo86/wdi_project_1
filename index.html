@@ -3,26 +3,26 @@
 <head>
   <title>Mastermind : Ninja Edition</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-compat/3.0.0-alpha1/jquery.min.js"></script>
+  <script src="script/jquery.js"></script>
   <script src="script/script.js"></script>
 </head>
 <body>
   <div id='title'>Mastermind</div>
   <div id='subtitle'>Ninja Edition</div>
   <div id='pattern'>
-    <div class='colorChoice1'></div>
-    <div class='colorChoice2'></div>
-    <div class='colorChoice3'></div>
-    <div class='colorChoice4'></div>
-    <div class='colorChoice5'></div>
-    <div class='colorChoice6'></div>
+    <div><img id='red' class='choices' src='img/red_ninja.png' /></div>
+    <div><img id='orange' class='choices' src='img/orange_ninja.png' /></div>
+    <div><img id='yellow' class='choices' src='img/yellow_ninja.png' /></div>
+    <div><img id='green' class='choices' src='img/green_ninja.png' /></div>
+    <div><img id='blue' class='choices' src='img/blue_ninja.png' /></div>
+    <div><img id='purple' class='choices' src='img/purple_ninja.png' /></div>
   </div>
   <div id='board'>
     <div id='guess' class='num-1'>
-      <div class='guessColor'></div>
-      <div class='guessColor'></div>
-      <div class='guessColor'></div>
-      <div class='guessColor'></div>
+      <div class='guessColor' data-num='0'></div>
+      <div class='guessColor' data-num='1'></div>
+      <div class='guessColor' data-num='2'></div>
+      <div class='guessColor' data-num='3'></div>
       <div id='status'>
         <div class='guessStatus'></div>
         <div class='guessStatus'></div>
