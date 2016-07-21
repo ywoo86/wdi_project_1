@@ -17,76 +17,48 @@ div#subtitle {
 }
 
 #pattern {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height: 50px;
   margin: 0 auto;
+  padding: 10px;
   display: flex;
   justify-content: space-around;
   width: 400px;
   border-radius: 20px;
 }
 
-.colorChoice1 {
-  border-radius: 100%;
-  background-color: red;
+.choices {
+  background-size: cover;
   height: 50px;
   display: inline-block;
   flex: 0 1 50px;
-}
-.colorChoice2 {
   border-radius: 100%;
-  background-color: orange;
-  height: 50px;
-  display: inline-block;
-  flex: 0 1 50px;
-}
-.colorChoice3 {
-  border-radius: 100%;
-  background-color: yellow;
-  height: 50px;
-  display: inline-block;
-  flex: 0 1 50px;
-}
-.colorChoice4 {
-  border-radius: 100%;
-  background-color: green;
-  height: 50px;
-  display: inline-block;
-  flex: 0 1 50px;
-}
-.colorChoice5 {
-  border-radius: 100%;
-  background-color: blue;
-  height: 50px;
-  display: inline-block;
-  flex: 0 1 50px;
-}
-.colorChoice6 {
-  border-radius: 100%;
-  background-color: violet;
-  height: 50px;
-  display: inline-block;
-  flex: 0 1 50px;
+  border: 1px solid black;
 }
 
 #board {
   border: 1px solid black;
   height: 400px;
+  width: 400px;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 #guess {
   width: 350px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: 0 auto;
   display: flex;
   justify-content: center;
   border-radius: 20px;
+  padding: 10px;
 }
 
 .guessColor {
   border-radius: 100%;
   background-color: gray;
+  background-size: cover;
+  border: 1px solid black;
   width: 50px;
   height: 50px;
   display: inline-block;
@@ -101,6 +73,8 @@ div#subtitle {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  border-radius: 10px;
+
 }
 
 .guessStatus {
@@ -110,7 +84,38 @@ div#subtitle {
   height: 20px;
   display: inline-block;
   flex: 0 1 17px;
-  margin: 2px
+  margin: 2px;
 }
 
+.blackPeg {
+  background-color: black;
+}
 
+.whitePeg {
+  background-color: white;
+}
+
+.red {
+  background-color: white;
+  background-image: url('../img/red_ninja.png');
+}
+.orange {
+  background-color: white;
+  background-image: url('../img/orange_ninja.png');
+}
+.yellow {
+  background-color: white;
+  background-image: url('../img/yellow_ninja.png');
+}
+.green {
+  background-color: white;
+  background-image: url('../img/green_ninja.png');
+}
+.blue {
+  background-color: white;
+  background-image: url('../img/blue_ninja.png');
+}
+.purple {
+  background-color: white;
+  background-image: url('../img/purple_ninja.png');
+}
