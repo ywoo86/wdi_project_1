@@ -31,9 +31,16 @@ $(function(){
 
   // Global Variables
   var randomPattern = [];
-  var userGuess =['', '', '', ''];
+  var userGuess = ['', '', '', ''];
   var $choices = $('.choices');
   var $guessColor = $('.guessColor');
+
+
+  // Reset function
+  var resetVariables = function(){
+    randomPattern = [];
+    userGuess = ['', '', '', ''];
+  }
 
 
   // Selects non-duplicated color pattern
@@ -48,26 +55,90 @@ $(function(){
     }
   }
 
+
   // Listens for mouse click and prints out which one you clicked
   var clickListener = function(){
     var colorPicked = '';
     var posPicked = '';
+    var counter = 0;
 
     $choices.on('click', function(){
       colorPicked = $(this).attr('id');
+      console.log($(this));
+      $(this).off('click');
+      counter++;
+      console.log('counter: '+counter);
     })
-
     $guessColor.on('click', function(){
       posPicked = parseInt($(this).attr('data-num'));
-      $(this).addClass(colorPicked);
+      $(this).attr('id', colorPicked);
       userGuess[posPicked] = colorPicked;
+      colorPicked = '';
       console.log(userGuess); // this is temp print out of array after every click
+      if (counter === 4){
+        $choices.off();
+        $guessColor.off();
+        checkPattern();
+      }
     });
-  };
+  }; // end of checkListener function
 
 
-  randomColor();
+  // checkPattern function to see if things exist or correct
+  // also calls fillStatus function to fill the tiny pegs
+  var checkPattern = function(){
+    console.log('you are now entering the pattern check function');
+
+    var white_peg = 0;
+    var black_peg = 0;
+
+    for (var i = 0; i < userGuess.length; i++){
+      if (randomPattern.indexOf(userGuess[i]) > -1){
+        if (randomPattern.indexOf(userGuess[i]) === i){
+          white_peg++;
+        } else {
+          black_peg++;
+        }
+      } else {
+        // wrong color entirely
+      }
+    }
+    if (white_peg === 4){
+      winnersCircle();
+    } else {
+      fillStatus(white_peg, black_peg);
+    };
+  }; // end of checkPattern function
+
+  // temp function to let you know you won
+  var winnersCircle = function(){
+    console.log('winner!!!!!!');
+  }; // end of winnersCircle function
+
+
+  // fillStatus fills the status pegs to let you know how you did
+  var fillStatus = function(white, black){
+    var $guessStatus = $('.guessStatus');
+    $guessStatus.each(function(){
+      if (white > 0){
+        $(this).addClass('whitePeg');
+        white--;
+      } else if (black > 0){
+        $(this).addClass('blackPeg');
+        black--;
+      } else {
+        // leave it alone
+      };
+    });
+  }; // end of fillStatus function
+
+
+
+
+
+
   $(document).ready(function(){
+    randomColor();
     clickListener();
   });
 
