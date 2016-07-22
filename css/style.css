@@ -80,6 +80,7 @@ div#subtitle {
 .guessStatus {
   border-radius: 100%;
   background-color: gray;
+  border: 1px solid black;
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -95,27 +96,27 @@ div#subtitle {
   background-color: white;
 }
 
-.red {
+#red {
   background-color: white;
   background-image: url('../img/red_ninja.png');
 }
-.orange {
+#orange {
   background-color: white;
   background-image: url('../img/orange_ninja.png');
 }
-.yellow {
+#yellow {
   background-color: white;
   background-image: url('../img/yellow_ninja.png');
 }
-.green {
+#green {
   background-color: white;
   background-image: url('../img/green_ninja.png');
 }
-.blue {
+#blue {
   background-color: white;
   background-image: url('../img/blue_ninja.png');
 }
-.purple {
+#purple {
   background-color: white;
   background-image: url('../img/purple_ninja.png');
 }
