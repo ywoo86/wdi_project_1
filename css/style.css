@@ -1,19 +1,21 @@
 body {
+  background-image: url('../img/blossoms.jpg');
+  background-size: cover;
   max-width: 600px;
-  border: 1px solid black;
-  margin: 30px auto;
+  margin: 20px auto;
 }
 
 div#title {
   text-align: center;
-  font-family: calibri, sans-serif;
-  font-size: 40px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 80px;
+  text-shadow: 1px 1px 10px white;
 }
 
 div#subtitle {
   text-align: center;
-  font-family: calibri, sans-serif;
-  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
 }
 
 #pattern {
@@ -37,7 +39,8 @@ div#subtitle {
 }
 
 #board {
-  border: 1px solid black;
+  background-color: rgba(255, 255, 255, .4);
+  border-radius: 10px;
   height: 400px;
   width: 400px;
   overflow: hidden;
@@ -46,7 +49,6 @@ div#subtitle {
 
 #guess {
   width: 350px;
-  /* border: 1px solid black; */
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -56,31 +58,31 @@ div#subtitle {
 
 .guessColor {
   border-radius: 100%;
-  background-color: gray;
+  background-color: lightgray;
   background-size: cover;
-  border: 1px solid black;
+  border: 1px solid lightgray;
   width: 50px;
   height: 50px;
   display: inline-block;
   flex: 0 1 50px;
   margin: 0 10px;
 }
+
 #status {
   width: 50px;
   height: 50px;
-  border: 1px solid black;
+  border: 1px dotted lightgray;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  border-radius: 10px;
-
+  border-radius: 5px;
 }
 
 .guessStatus {
   border-radius: 100%;
   background-color: gray;
-  border: 1px solid black;
+  border: 1px solid gray;
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -97,26 +99,26 @@ div#subtitle {
 }
 
 #red {
-  background-color: white;
+  /* background-color: white; */
   background-image: url('../img/red_ninja.png');
 }
 #orange {
-  background-color: white;
+  /* background-color: white; */
   background-image: url('../img/orange_ninja.png');
 }
 #yellow {
-  background-color: white;
+  /* background-color: white; */
   background-image: url('../img/yellow_ninja.png');
 }
 #green {
-  background-color: white;
+  /* background-color: white; */
   background-image: url('../img/green_ninja.png');
 }
 #blue {
-  background-color: white;
+  /* background-color: white; */
   background-image: url('../img/blue_ninja.png');
 }
-#purple {
-  background-color: white;
-  background-image: url('../img/purple_ninja.png');
+#pink {
+  /* background-color: white; */
+  background-image: url('../img/pink_ninja.png');
 }
