@@ -12,22 +12,22 @@ $(function(){
   // - if a color correct & position incorrect then black_peg++ - DONE
   // - show number of each white_peg and black_peg - DONE
   // - if all color & position correct then win - DONE
+  // - push down users choice with shown pegs - DONE
   // - if not all color & position correct then attempt++
-  // - push down users choice with shown pegs
   // - clear board and repeat process until 10 attempts
   // ----------------------------------------------
   // >> sprint two
   // ----------------------------------------------
   // >> possible to not duplicate pegs - DONE
   // >> track and show all attempts
-  // >> track and show all pegs with associated attempts
+  // >> track and show all pegs with associated attempts - DONE
   // >> if click again then remove the image and clear its content
   // ----------------------------------------------
   // +++ sprint three
   // ----------------------------------------------
-  // +++ imagery
-  // +++ artwork
-  // +++ drag and drop of image
+  // +++ imagery - DONE
+  // +++ artwork - DONE
+  // +++ drag and drop of image - ?????? mousedown/mouseup
 
   // Global Variables
   var randomPattern = [];
@@ -40,7 +40,7 @@ $(function(){
 
   // Selects non-duplicated color pattern
   var randomColor = function(){
-    var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'violet'];
+    var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'pink'];
     var colorIndex = 0;
 
     for (var i = 0; i < 4; i++){
@@ -59,10 +59,8 @@ $(function(){
 
     $choices.on('click', function(){
       colorPicked = $(this).attr('id');
-      console.log($(this));
       $(this).off('click');
       counter++;
-      console.log('counter: '+counter);
     });
     $guessColor.on('click', function(){
       posPicked = parseInt($(this).attr('data-num'));
@@ -83,17 +81,21 @@ $(function(){
   // checkPattern function to see if things exist or correct
   // also calls fillStatus function to fill the tiny pegs
   var checkPattern = function(){
-    console.log('you are now entering the pattern check function');
-
+    console.log('inside checkPattern');
     var white_peg = 0;
     var black_peg = 0;
 
+    console.log(randomPattern);
     for (var i = 0; i < userGuess.length; i++){
+      console.log('in for loop');
       if (randomPattern.indexOf(userGuess[i]) > -1){
+        console.log('first color check: '+randomPattern.indexOf(userGuess[i]));
         if (randomPattern.indexOf(userGuess[i]) === i){
           white_peg++;
+          console.log('white peg ++');
         } else {
           black_peg++;
+          console.log('black peg ++');
         }
       } else {
         // wrong color entirely
@@ -102,6 +104,7 @@ $(function(){
     if (white_peg === 4){
       winnersCircle();
     } else {
+      console.log('calling fillStatus fxn');
       fillStatus(white_peg, black_peg);
       nextAttempt();
     };
@@ -126,8 +129,8 @@ $(function(){
     $div.append($divStatus);
     $div.addClass('active');
     $('.active').removeClass('active');
-    resetForGuess();
     $board.prepend($div);
+    resetForGuess();
   };
 
 
@@ -135,7 +138,6 @@ $(function(){
   // resetForGuess
   var resetForGuess = function(){
     // reset global variables but NOT original pattern
-    randomPattern = [];
     userGuess = ['', '', '', ''];
     $guessColor = $('.active .guessColor');
     // turn click back on
@@ -164,7 +166,7 @@ $(function(){
 
   // temp function to let you know you won
   var winnersCircle = function(){
-    console.log('winner!!!!!!');
+    alert('winner!!!!!!');
   }; // end of winnersCircle function
 
 
