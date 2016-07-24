@@ -25,7 +25,7 @@ $(function(){
   // >> artwork - DONE
   // >> new game - DONE
   // >> directions text - DONE
-  // >> read me file
+  // >> read me file - DONE
   // ----------------------------------------------
   // +++ sprint three
   // ----------------------------------------------
@@ -55,6 +55,7 @@ $(function(){
       colors.splice(colorIndex, 1);
     };
   }; // end of randomColor function
+
 
 
   // Listens for mouse click and prints out which one you clicked
@@ -147,7 +148,8 @@ $(function(){
     $guessColor = $('.active .guessColor');
     // turn click back on
     clickListener();
-  };
+  }; // end of resetForGuess function
+
 
 
   // full reset function for new game
@@ -182,7 +184,7 @@ $(function(){
 
     randomColor();
     clickListener();
-  }
+  }; // end of fullReset function
 
 
 
@@ -215,6 +217,8 @@ $(function(){
       fullReset();
     }
   }; // end of winnersCircle function
+
+
 
   // losersLounge function if you run out of tries
   var losersLounge = function(){
