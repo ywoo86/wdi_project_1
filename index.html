@@ -15,8 +15,8 @@
   <div id='directions'>
     <li>Guess the hidden pattern in ten tries</li>
     <li>Place a color in an open slot</li>
-    <li>White peg: right color and position</li>
-    <li>Black peg: right color, wrong position</li>
+    <li><span id='whiteText'>White peg:</span> right color and position</li>
+    <li><span id='blackText'>Black peg:</span> right color, wrong position</li>
   </div>
 
   <div id='pattern'>
@@ -27,8 +27,8 @@
     <div id='blue' class='choices'></div>
     <div id='pink' class='choices'></div>
   </div>
-  <div id='board'>
 
+  <div id='board'>
     <div id='guess' class='active'>
       <div class='guessColor' data-num='0'></div>
       <div class='guessColor' data-num='1'></div>
@@ -41,8 +41,8 @@
         <div class='guessStatus'></div>
       </div>
     </div>
-
-
   </div>
+
+  <div id='highScore'></div>
 </body>
 </html>
