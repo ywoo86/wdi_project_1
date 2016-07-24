@@ -45,8 +45,8 @@ The following technologies were used for this game:
 ---
 
 ### Wireframes
-[Imgur](http://i.imgur.com/xPIO9jF.png)
-[Imgur](http://i.imgur.com/ISDu7xp.png)
+![Initial Board](http://i.imgur.com/xPIO9jF.png)
+![Second Attempt](http://i.imgur.com/ISDu7xp.png)
 
 ---
 
