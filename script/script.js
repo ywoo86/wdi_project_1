@@ -74,7 +74,6 @@ $(function(){
       $(this).attr('id', colorPicked);
       userGuess[posPicked] = colorPicked;
       colorPicked = '';
-      console.log(userGuess); // this is temp print out of array after every click
       if (counter === 4){
         $choices.off();
         $guessColor.off();
@@ -88,7 +87,6 @@ $(function(){
   // checkPattern function to see if things exist or correct
   // also calls fillStatus function to fill the tiny pegs
   var checkPattern = function(){
-    console.log('inside checkPattern');
     var white_peg = 0;
     var black_peg = 0;
 
@@ -109,6 +107,7 @@ $(function(){
     } else if (guessCount < 10) {
       guessCount++;
       fillStatus(white_peg, black_peg);
+      $('.active').addClass('shake');
       nextAttempt();
     } else {
       fillStatus(white_peg, black_peg);
@@ -135,6 +134,7 @@ $(function(){
     $div.append($divStatus);
     $div.addClass('active');
     $('.active').removeClass('active');
+    $('.active').removeClass('shake');
     $board.prepend($div);
     resetForGuess();
   }; // end of nextAttempt function
