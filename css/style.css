@@ -18,8 +18,12 @@ div#subtitle {
   font-size: 30px;
 }
 
+h3 {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
 #pattern {
-  /* border: 1px solid black; */
   height: 50px;
   margin: 0 auto;
   padding: 10px;
@@ -90,12 +94,20 @@ div#subtitle {
   margin: 2px;
 }
 
+#directions {
+  margin: 10px 0 10px 135px;
+  font-family: calibri, sans-serif;
+  text-align: justify;
+}
+
 .blackPeg {
   background-color: black;
+  /* background-image: radial-gradient(circle, white 0%, black 100%); */
 }
 
 .whitePeg {
   background-color: white;
+  /* background-image: radial-gradient(circle, black 0%, white 100%); */
 }
 
 #red {
@@ -121,4 +133,17 @@ div#subtitle {
 #pink {
   /* background-color: white; */
   background-image: url('../img/pink_ninja.png');
+}
+
+.blink {
+  animation-name: blinker;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+}
+@keyframes blinker {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1; color: #F00;}
 }
