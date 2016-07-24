@@ -81,6 +81,7 @@ h3 {
   justify-content: center;
   flex-wrap: wrap;
   border-radius: 5px;
+  /* background-color: lightgray; */
 }
 
 .guessStatus {
