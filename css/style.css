@@ -42,6 +42,14 @@ h3 {
   border: 1px solid black;
 }
 
+.choices:hover {
+  background-color: gold;
+}
+
+.guessColor:hover {
+  background-color: gold;
+}
+
 #board {
   background-color: rgba(255, 255, 255, .4);
   border-radius: 10px;
@@ -99,6 +107,18 @@ h3 {
   margin: 10px 0 10px 135px;
   font-family: calibri, sans-serif;
   text-align: justify;
+}
+
+#whiteText {
+  background-color: #fff;
+  color: #000;
+  border-radius: 10px;
+}
+
+#blackText {
+  background-color: #000;
+  color: #fff;
+  border-radius: 10px;
 }
 
 .blackPeg {
