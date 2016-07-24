@@ -13,21 +13,26 @@ $(function(){
   // - show number of each white_peg and black_peg - DONE
   // - if all color & position correct then win - DONE
   // - push down users choice with shown pegs - DONE
-  // - if not all color & position correct then attempt++
-  // - clear board and repeat process until 10 attempts
+  // - if not all color & position correct then attempt++ - DONE
+  // - add new element to board and repeat process until 10 attempts - DONE
   // ----------------------------------------------
   // >> sprint two
   // ----------------------------------------------
   // >> possible to not duplicate pegs - DONE
-  // >> track and show all attempts
+  // >> track and show all attempts - DONE
   // >> track and show all pegs with associated attempts - DONE
-  // >> if click again then remove the image and clear its content
+  // >> imagery - DONE
+  // >> artwork - DONE
+  // >> new game - DONE
+  // >> directions text - DONE
+  // >> read me file
   // ----------------------------------------------
   // +++ sprint three
   // ----------------------------------------------
-  // +++ imagery - DONE
-  // +++ artwork - DONE
-  // +++ drag and drop of image - ?????? mousedown/mouseup
+  // +++ high score log
+  // +++ drag and drop of image
+  // +++ if click again then remove the image and clear its content
+  // +++ 3d shaped pegs
 
   // Global Variables
   var randomPattern = [];
@@ -35,6 +40,7 @@ $(function(){
   var $choices = $('.choices');
   var $board = $('#board');
   var $guessColor = $('.active .guessColor');
+  var guessCount = 1;
 
 
 
@@ -102,12 +108,16 @@ $(function(){
       }
     }
     if (white_peg === 4){
+      fillStatus(white_peg, black_peg);
       winnersCircle();
-    } else {
-      console.log('calling fillStatus fxn');
+    } else if (guessCount < 10) {
+      guessCount++;
       fillStatus(white_peg, black_peg);
       nextAttempt();
-    };
+    } else {
+      fillStatus(white_peg, black_peg);
+      losersLounge();
+    }
   }; // end of checkPattern function
 
 
@@ -131,11 +141,11 @@ $(function(){
     $('.active').removeClass('active');
     $board.prepend($div);
     resetForGuess();
-  };
+  }; // end of nextAttempt function
 
 
 
-  // resetForGuess
+  // resetForGuess function
   var resetForGuess = function(){
     // reset global variables but NOT original pattern
     userGuess = ['', '', '', ''];
@@ -143,6 +153,41 @@ $(function(){
     // turn click back on
     clickListener();
   };
+
+
+  // full reset function for new game
+  var fullReset = function(){
+    // reset global variables and the original pattern
+    randomPattern = [];
+    userGuess = ['', '', '', ''];
+    guessCount = 1;
+
+    $('div#guess').remove();
+
+    var $div = $('<div id="guess" class="active"></div>');
+    for (var i = 0; i < 4; i++){
+      $div.append('<div class="guessColor" data-num='+i+'></div>');
+    };
+
+    var $divStatus = $('<div id="status">');
+    for (i = 0; i < 4; i++){
+      $divStatus.append('<div class="guessStatus"></div>');
+    };
+
+    $div.append($divStatus);
+    $board.prepend($div);
+
+    var $subtitle = $('#subtitle');
+    $subtitle.text('Ninja Edition');
+    $subtitle.removeClass('blink');
+
+    $choices = $('.choices');
+    $board = $('#board');
+    $guessColor = $('.active .guessColor');
+
+    randomColor();
+    clickListener();
+  }
 
 
 
@@ -164,12 +209,29 @@ $(function(){
 
 
 
-  // temp function to let you know you won
+  // winnersCircle function to let you know you won
+  // source: https://www.kapadiya.net/snippets/how-to-make-blinking-flashing-text-with-css3-and-jquery/
   var winnersCircle = function(){
-    alert('winner!!!!!!');
+    var $subtitle = $('#subtitle');
+    $subtitle.text('WINNER!!!!!');
+    $subtitle.addClass('blink');
+    var playAgain = confirm('Do you want to play again?');
+    if (playAgain) {
+      fullReset();
+    }
+
   }; // end of winnersCircle function
 
-
+  // losersLounge function if you run out of tries
+  var losersLounge = function(){
+    var $subtitle = $('#subtitle');
+    $subtitle.text('OUT OF TRIES - WHOMP!');
+    $subtitle.addClass('blink');
+    var playAgain = confirm('Do you want to play again?');
+    if (playAgain) {
+      fullReset();
+    };
+  }; // end of losers lounge function
 
 
 
