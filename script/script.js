@@ -91,17 +91,12 @@ $(function(){
     var white_peg = 0;
     var black_peg = 0;
 
-    console.log(randomPattern);
     for (var i = 0; i < userGuess.length; i++){
-      console.log('in for loop');
       if (randomPattern.indexOf(userGuess[i]) > -1){
-        console.log('first color check: '+randomPattern.indexOf(userGuess[i]));
         if (randomPattern.indexOf(userGuess[i]) === i){
           white_peg++;
-          console.log('white peg ++');
         } else {
           black_peg++;
-          console.log('black peg ++');
         }
       } else {
         // wrong color entirely
@@ -219,7 +214,6 @@ $(function(){
     if (playAgain) {
       fullReset();
     }
-
   }; // end of winnersCircle function
 
   // losersLounge function if you run out of tries
