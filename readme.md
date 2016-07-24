@@ -67,3 +67,4 @@ The following technologies were used for this game:
 * [Mozilla Developers Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [jQuery API](http://api.jquery.com/)
 * [Vikas Kapadiya's Blog](https://www.kapadiya.net/snippets/how-to-make-blinking-flashing-text-with-css3-and-jquery/)
+* [CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
