@@ -55,8 +55,8 @@ The following technologies were used for this game:
 * HTML elements layout -> use of flex to manage containers
 * Select four (4) colors and four (4) positions and increment count -> moved count into the color click and the check logic inside the position click
 * Checking the pattern with indexOf -> MDN research
-* Prepend a new '<div>' element without effecting the previous choices -> added 'active' class to new '<div>'' element and removed the class from the previous guesses
-* New '<div>' prepend could not be clicked -> calling of functions was reordered
+* Prepend a new <div> element without effecting the previous choices -> added 'active' class to new <div> element and removed the class from the previous guesses
+* New <div> prepend could not be clicked -> calling of functions was reordered
 * Reset of board -> reset all global variables inside the fullReset function
 * Blinking text to signify win/loss -> blog site with explanation of keyframes
 
