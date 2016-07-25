@@ -42,6 +42,8 @@ The following technologies were used for this game:
 * If not all color & position correct then increment attempt and prepend guess div
 * If 10 attempts and not guessed then losers lounge
 
+![Logic Flowchart](http://i.imgur.com/PMEBtrH.png)
+
 ---
 
 ### Wireframes
